@@ -152,6 +152,6 @@ app.use((req,res,next)=>
 app.use((err,req,res,next)=>
 {
     let {statuscode=500,message="Something went wrong"}=err;
-    res.status(statuscode).render("Error.ejs",{statuscode ,message});
+    res.status(statuscode).render("error.ejs",{statuscode ,message});
 })
 
