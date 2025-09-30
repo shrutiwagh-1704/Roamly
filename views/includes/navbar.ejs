@@ -1,0 +1,86 @@
+<style>
+        .btn-search {
+            background-color: #ff385c;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            padding: 0 1rem 0 1rem;
+        }
+        
+        .btn-search:hover {
+            background-color: #ff385c;
+            color: white;
+        }
+
+        /* White background for collapsible menu ONLY on mobile */
+        @media (max-width: 767px) {
+        .navbar-collapse {
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        }
+
+        /* Center the search form at ALL screen sizes and keep it fixed */
+        .search-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001;
+            top: 8px;
+        }
+
+        /* Responsive search bar width */
+        @media (max-width: 576px) {
+            .search-center {
+                width: 60%;
+            }
+            .search-center .form-control {
+                font-size: 14px;
+            }
+            .search-center .btn-search {
+                padding: 0 0.5rem;
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-md border-bottom sticky-top navbar-light">
+        <div class="container-fluid position-relative">
+            <!-- Brand -->
+            <a class="navbar-brand" href="/listing/showlisting">
+                <i class="fa-regular fa-compass"></i>
+            </a>
+            
+            <!-- Centered Search Form (visible only on desktop) -->
+            <form class="d-flex search-center" role="search" action="/listing/showlisting">
+                <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search"/>
+                <button class="btn btn-search" type="submit">Search</button>
+            </form>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Collapsible Menu (only navigation links) -->
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link" href="/listing/showlisting">Explore</a>
+                    <a class="nav-link" href="/listing/addnewlisting">Add</a>
+                </div>
+                
+                <div class="navbar-nav ms-auto">
+                    <!-- Conditional rendering would go here -->
+                    <!-- If not logged in -->
+                    <a class="nav-link" aria-current="page" href="/users/signup">Signup</a>
+                    <a class="nav-link" aria-current="page" href="/users/login">Login</a>
+                    
+                    <!-- If logged in (uncomment and use appropriate logic) -->
+                    <!-- <a class="nav-link" aria-current="page" href="/users/logout">Logout</a> -->
+                </div>
+            </div>
+        </div>
+    </nav>

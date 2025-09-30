@@ -1,0 +1,46 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <!--  -->
+            <form method="post" action="/listing/editlisting/<%=view_listing._id %>?_method=PUT" enctype="multipart/form-data" >
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" name=Listing[title] id="title" value="<%= view_listing.title %>" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">description:</label>
+                    <textarea id="description" rows="5" cols="35" name=Listing[description] class="form-control" ><%= view_listing.description %></textarea>
+                </div>
+
+                <div  class="mb-3">
+                    <label for="image-url" class="form-label">Upload Image</label>
+                    <input id="image-url" type="file" name=image class="form-control"></input>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price:</label>
+                    <input type="number" name=Listing[price] id="price" value="<%= view_listing.price %>" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">location:</label>
+                    <input type="text" name=Listing[location] id="location" value="<%= view_listing.location %>" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="country" class="form-label">country:</label>
+                    <input type="text" name=Listing[country] id="country" value="<%= view_listing.country %>" class="form-control">
+                </div>
+
+             
+                
+                <button class="mb-3">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    
+</body>
