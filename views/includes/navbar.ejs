@@ -74,11 +74,13 @@
                 
                 <div class="navbar-nav ms-auto">
                     <!-- Conditional rendering would go here -->
-                    <!-- If not logged in -->
-                    <a class="nav-link" aria-current="page" href="/users/signup">Signup</a>
-                    <a class="nav-link" aria-current="page" href="/users/login">Login</a>
+                    <% if (!currentuser) { %>
+                        <a class="nav-link" aria-current="page" href="/users/signup">Signup</a>
+                        <a class="nav-link" aria-current="page" href="/users/login">Login</a>
+                    <% } else { %>
                     
-                    <!-- If logged in (uncomment and use appropriate logic) -->
+                        <a class="nav-link" href="/users/logout">Logout</a>
+                    <% } %>
                     <!-- <a class="nav-link" aria-current="page" href="/users/logout">Logout</a> -->
                 </div>
             </div>

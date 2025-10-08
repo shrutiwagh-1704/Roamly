@@ -20,7 +20,7 @@ const MongoStore = require('connect-mongo');
 
 const flash = require('connect-flash');
 
-const mongo_url="mongodb://127.0.0.1:27017/Roamly";
+// const mongo_url="mongodb://127.0.0.1:27017/Roamly";
 const db_url=process.env.db_url;
 
 
